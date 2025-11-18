@@ -2,8 +2,6 @@ using Microsoft.Data.Sqlite;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Database;
-
 public sealed class Database
 {
     private static readonly Database _instance = new();
