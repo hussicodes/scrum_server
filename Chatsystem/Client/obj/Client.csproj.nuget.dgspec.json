@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\husse\\Documents\\Datamatiker\\3.Semester\\SCRUM\\Eksamen\\Chatsystem\\Client\\Client.csproj": {}
+    "C:\\Users\\olive\\Documents\\GitHub\\scrum_server\\Chatsystem\\Client\\Client.csproj": {}
   },
   "projects": {
-    "C:\\Users\\husse\\Documents\\Datamatiker\\3.Semester\\SCRUM\\Eksamen\\Chatsystem\\Client\\Client.csproj": {
+    "C:\\Users\\olive\\Documents\\GitHub\\scrum_server\\Chatsystem\\Client\\Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\husse\\Documents\\Datamatiker\\3.Semester\\SCRUM\\Eksamen\\Chatsystem\\Client\\Client.csproj",
+        "projectUniqueName": "C:\\Users\\olive\\Documents\\GitHub\\scrum_server\\Chatsystem\\Client\\Client.csproj",
         "projectName": "Client",
-        "projectPath": "C:\\Users\\husse\\Documents\\Datamatiker\\3.Semester\\SCRUM\\Eksamen\\Chatsystem\\Client\\Client.csproj",
-        "packagesPath": "C:\\Users\\husse\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\husse\\Documents\\Datamatiker\\3.Semester\\SCRUM\\Eksamen\\Chatsystem\\Client\\obj\\",
+        "projectPath": "C:\\Users\\olive\\Documents\\GitHub\\scrum_server\\Chatsystem\\Client\\Client.csproj",
+        "packagesPath": "C:\\Users\\olive\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\olive\\Documents\\GitHub\\scrum_server\\Chatsystem\\Client\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\husse\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\olive\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -66,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.307/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
