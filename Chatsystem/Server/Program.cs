@@ -3,10 +3,14 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
+using System.Collections.Generic;
 
 class Program
 {
     private static Database db = Database.Instance;
+    private static List<TcpClient> _connectedClients = new List<TcpClient>();
+    private static readonly object _lock = new object();
+
     static void Main()
     {
         TcpListener server = new TcpListener(IPAddress.Any, 5000);
@@ -87,6 +91,11 @@ class Program
 
         Console.WriteLine($"{username} is authenticated and joined the chat!");
 
+        lock (_lock)
+        {
+            _connectedClients.Add(client);
+        }
+
         while (true)
         {
             try
@@ -99,6 +108,7 @@ class Program
                 }
 
                 Console.WriteLine($"[{username}]: {message}");
+                BroadcastMessage($"[{username}]: {message}");
             }
             catch
             {
@@ -107,7 +117,30 @@ class Program
             }
         }
 
+        lock (_lock)
+        {
+            _connectedClients.Remove(client);
+        }
         client.Close();
+    }
+
+    static void BroadcastMessage(string message)
+    {
+        lock (_lock)
+        {
+            foreach (var client in _connectedClients)
+            {
+                try
+                {
+                    NetworkStream stream = client.GetStream();
+                    SendMessage(stream, message);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error broadcasting to client: {ex.Message}");
+                }
+            }
+        }
     }
 
     // Send a length-prefixed message to the client.
