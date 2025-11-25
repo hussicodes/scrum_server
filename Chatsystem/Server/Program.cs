@@ -107,6 +107,7 @@ class Program
                     break;
                 }
 
+                message = AddLineBreaks(message, 25);
                 Console.WriteLine($"[{username}]: {message}");
                 BroadcastMessage($"[{username}]: {message}");
             }
@@ -161,6 +162,7 @@ class Program
         {
             stream.Write(body, 0, body.Length);
         }
+
     }
 
     // Read a length-prefixed message from the stream.
@@ -215,4 +217,27 @@ class Program
 
         return true;
     }
+
+    static string AddLineBreaks(string text, int maxLineLength)
+    {
+        if (string.IsNullOrEmpty(text) || text.Length <= maxLineLength)
+        {
+            return text;
+        }
+
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < text.Length; i += maxLineLength)
+        {
+            if (i + maxLineLength >= text.Length)
+            {
+                sb.Append(text.Substring(i));
+            }
+            else
+            {
+                sb.AppendLine(text.Substring(i, maxLineLength));
+            }
+        }
+        return sb.ToString();
+    }
 }
+
